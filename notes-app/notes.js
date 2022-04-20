@@ -1,5 +1,6 @@
 const chalk = require('chalk')
 const fs = require('fs')
+const { indexOf } = require('lodash')
 
 const getNotes = () => {
     "Your Notes..."
@@ -39,6 +40,14 @@ const removeNote = (title) => {
 
 }
 
+const listNote = () => {
+    const notes = loadNotes()
+
+    notes.forEach((note) => {
+        console.log(chalk.green('Título da Nota: ') + chalk.yellow(note.title))
+    })
+}
+
 
 const saveNotes = (notes) => {
     const dataJSON = JSON.stringify(notes)
@@ -61,5 +70,6 @@ const loadNotes = () => {
 module.exports = {
     getNotes: getNotes,
     addNote: addNote,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNote: listNote
 }
