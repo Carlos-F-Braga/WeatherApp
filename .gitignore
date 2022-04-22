@@ -1,3 +1,3 @@
 node_modules/
-notes_app/
-#ignorando node_modules
+notes-app/
+#ignorando node_modules e demais projetos
