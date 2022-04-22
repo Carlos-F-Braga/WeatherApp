@@ -11,7 +11,6 @@ const addNote = (title, body) => {
     const duplicateNote = notes.find((note) => note.title === title)
 
 
-
     if (!duplicateNote) {
         notes.push({
             title: title,
@@ -21,7 +20,7 @@ const addNote = (title, body) => {
         console.log('Nova Nota Adicionada!')
     }
     else {
-        console.log(duplicateNotes)
+        console.log(duplicateNote)
         console.log('Título da Nota já Existente!')
     }
 }
