@@ -51,6 +51,22 @@ app.get('/weather', (req, res) => {
     }])
 })
 
+app.get('/help/*', (req, res) => {
+    res.render('404help', {
+        error: 'Help article not found',
+        title: '404 Help',
+        name: carlos
+    })
+})
+
+app.get('*', (req, res) => {
+    res.render('404', {
+        error: 'Page not found',
+        title: '404',
+        name: carlos
+    })
+})
+
 const port = 3000
 
 app.listen(port, () => {
