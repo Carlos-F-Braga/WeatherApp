@@ -42,6 +42,12 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
+    if (!req.query.address) {
+        res.send({
+            error: 'Voce precisa prover um Endereço'
+        })
+    }
+    
     res.send([{
         Location: 'Philadelphia',
         Forecast: 'Está Nevando'
@@ -49,6 +55,18 @@ app.get('/weather', (req, res) => {
         Location: 'Rio Preto',
         Forecast: 'Está Queimando'
     }])
+})
+
+app.get('/products', (req, res) => {
+    if (!req.query.search) {
+        res.send({
+            error: 'Voce precisa prover um Termo de Busca'
+        })
+    }
+
+    res.send({ 
+        products: []
+    })
 })
 
 app.get('/help/*', (req, res) => {
