@@ -36,7 +36,29 @@ header a {
     text-decoration: none;
 }
 
-h1, p, a {
+input {
+    border: 1px solid #cccccc;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 11vw;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid #888888;
+    background: #888888;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+button:hover,
+button:active {
+    border: 1px solid #777777;
+    background: #777777;
+}
+
+h1, p, a, form {
     margin: 10px;
 }
 
